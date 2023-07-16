@@ -1,5 +1,6 @@
 package com.vrj.airportweather.model;
 
+import com.vrj.airportweather.dto.AirportDTO;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -21,5 +22,15 @@ public class Airport {
     private String country;
     private Double latitude;
     private Double longitude;
+
+    public AirportDTO toDTO(){
+        AirportDTO airportDTO = new AirportDTO();
+        airportDTO.setAirportName(this.getAirportName());
+        airportDTO.setCity(this.getCity());
+        airportDTO.setCountry(this.getCountry());
+        airportDTO.setLatitude(this.getLatitude().toString());
+        airportDTO.setLongitude(this.getLongitude().toString());
+        return airportDTO;
+    }
 
 }
