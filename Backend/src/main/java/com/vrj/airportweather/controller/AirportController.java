@@ -11,12 +11,8 @@ import java.util.Set;
 @RequestMapping("/airports")
 @CrossOrigin("*")
 public class AirportController {
-    private final AirportService airportService;
-
     @Autowired
-    public AirportController(AirportService airportService) {
-        this.airportService = airportService;
-    }
+    private AirportService airportService;
 
     @GetMapping("/byCity")
     public Set<AirportDTO> getByCity(@RequestParam("city") String city) {
