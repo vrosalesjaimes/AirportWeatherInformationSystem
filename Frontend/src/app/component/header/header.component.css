@@ -1,0 +1,22 @@
+header{
+    display: flex;
+    background-color: #1565C0;
+    color: white;
+    height: 10vh;
+    font-size: large;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+h1{
+    margin: 0;
+    padding: 0;
+    margin-left: .3em;
+}
+
+.material-icons{
+    font-size: 40px;
+    width: auto;
+    height: auto;
+}
