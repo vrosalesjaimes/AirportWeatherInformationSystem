@@ -1,0 +1,42 @@
+.panel {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 100%;
+    height: 100vh;
+    justify-content: center;
+}
+
+.form {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    flex-basis: 50%;
+    box-sizing: border-box;
+}
+
+.item {
+    display: flex;
+    width: 350px;
+}
+.mat-mdc-unelevated-button.mat-primary {
+    font-size: 1.2em;
+    background-color:   #1565C0;
+}
+
+p {
+    font-weight: bold;
+    font-size: 1.2em;
+    padding-right: 1em;
+    color: rgb(91, 86, 86);
+    left: 0;
+}
+
+mat-form-field {
+    margin-left: auto;
+}
+
+.icon {
+    width: 250px;
+    margin-bottom: 2em;
+}
