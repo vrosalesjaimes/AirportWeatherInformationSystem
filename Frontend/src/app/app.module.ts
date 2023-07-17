@@ -8,13 +8,15 @@ import { FormComponent } from './component/form/form.component';
 import {MatSelectModule} from '@angular/material/select';
 import {MatButtonModule} from '@angular/material/button';
 import {MatIconModule} from '@angular/material/icon';
-import { HeaderComponent } from './component/header/header.component'
+import { HeaderComponent } from './component/header/header.component';
+import { FooterComponent } from './component/footer/footer.component'
 
 @NgModule({
   declarations: [
     AppComponent,
     FormComponent,
-    HeaderComponent
+    HeaderComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
