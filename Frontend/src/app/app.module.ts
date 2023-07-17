@@ -9,14 +9,16 @@ import {MatSelectModule} from '@angular/material/select';
 import {MatButtonModule} from '@angular/material/button';
 import {MatIconModule} from '@angular/material/icon';
 import { HeaderComponent } from './component/header/header.component';
-import { FooterComponent } from './component/footer/footer.component'
+import { FooterComponent } from './component/footer/footer.component';
+import { PanelResultComponent } from './component/panel-result/panel-result.component'
 
 @NgModule({
   declarations: [
     AppComponent,
     FormComponent,
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    PanelResultComponent
   ],
   imports: [
     BrowserModule,
