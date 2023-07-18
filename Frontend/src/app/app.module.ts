@@ -10,7 +10,7 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatIconModule} from '@angular/material/icon';
 import { HeaderComponent } from './component/header/header.component';
 import { FooterComponent } from './component/footer/footer.component';
-import { PanelResultComponent } from './component/panel-result/panel-result.component'
+import { MapComponent } from './component/map/map.component'
 
 @NgModule({
   declarations: [
@@ -18,7 +18,7 @@ import { PanelResultComponent } from './component/panel-result/panel-result.comp
     FormComponent,
     HeaderComponent,
     FooterComponent,
-    PanelResultComponent
+    MapComponent
   ],
   imports: [
     BrowserModule,
