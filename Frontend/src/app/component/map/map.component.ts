@@ -16,8 +16,8 @@ export class MapComponent  implements OnInit {
   }
 
   generateMap(): void {
-    const width = 800;
-    const height = 600;
+    const width = 600;
+    const height = 400;
 
     // Datos de los aeropuertos
     const airport1 = {
