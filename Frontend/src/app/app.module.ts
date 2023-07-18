@@ -11,7 +11,8 @@ import {MatIconModule} from '@angular/material/icon';
 import { HeaderComponent } from './component/header/header.component';
 import { FooterComponent } from './component/footer/footer.component';
 import { MapComponent } from './component/map/map.component';
-import { WeatherComponent } from './component/weather/weather.component'
+import { WeatherComponent } from './component/weather/weather.component';
+import { BackgroundComponent } from './component/background/background.component'
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { WeatherComponent } from './component/weather/weather.component'
     HeaderComponent,
     FooterComponent,
     MapComponent,
-    WeatherComponent
+    WeatherComponent,
+    BackgroundComponent
   ],
   imports: [
     BrowserModule,
