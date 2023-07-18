@@ -10,7 +10,8 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatIconModule} from '@angular/material/icon';
 import { HeaderComponent } from './component/header/header.component';
 import { FooterComponent } from './component/footer/footer.component';
-import { MapComponent } from './component/map/map.component'
+import { MapComponent } from './component/map/map.component';
+import { WeatherComponent } from './component/weather/weather.component'
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { MapComponent } from './component/map/map.component'
     FormComponent,
     HeaderComponent,
     FooterComponent,
-    MapComponent
+    MapComponent,
+    WeatherComponent
   ],
   imports: [
     BrowserModule,
