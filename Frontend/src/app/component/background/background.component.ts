@@ -6,7 +6,6 @@ import { AfterViewInit, Component, ElementRef, ViewChild } from '@angular/core';
   styleUrls: ['./background.component.css']
 })
 export class BackgroundComponent implements AfterViewInit {
-  @ViewChild('bodyRef') bodyRef!: ElementRef;
 
   images: string[] = [
     'assets/background/1.webp',
@@ -25,7 +24,7 @@ export class BackgroundComponent implements AfterViewInit {
 
   ngAfterViewInit(): void {
     let indice = 0;
-    const bodyElement = this.elementRef.nativeElement.querySelector('#bodyBackground');
+    const bodyElement = document.body;
     const imagePreload = new Image();
 
     setInterval(() => {
