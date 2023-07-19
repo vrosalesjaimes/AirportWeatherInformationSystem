@@ -4,7 +4,7 @@
     flex-wrap: wrap;
     width: 80%;
     margin: 0 10%;
-    height: 75vh;
+    height: auto;
     justify-content: center;
 }
 
@@ -74,17 +74,16 @@ mat-form-field {
     padding: 2em;
 }
 
-@media screen and (max-width: 1100px) {
-    .panel{
-        height: 135vh;
-    }
-
-}
 
 @media screen and (max-width: 500px) {
+    .panel{
+        width: 100%;
+        margin:0;
+    }
+
     .item{
         flex-direction: column;
-        width: 80%;
+        width: auto;
     }
 
     .form:last-child{
