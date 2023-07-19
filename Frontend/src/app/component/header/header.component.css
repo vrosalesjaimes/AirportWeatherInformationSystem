@@ -1,22 +1,23 @@
 header{
     display: flex;
-    background-color: rgba(21, 101, 192, 0.8);
+    background-color: rgba(0, 0, 0);
     color: white;
     height: 10vh;
     font-size: large;
     display: flex;
     align-items: center;
-    justify-content: center;
 }
 
-h1{
+header img{
+    height: 8vh;
     margin: 0;
     padding: 0;
-    margin-left: .3em;
+    margin-left: .5em;
 }
 
-.material-icons{
-    font-size: 40px;
-    width: auto;
-    height: auto;
+header h1{
+    margin: 0;
+    padding: 0;
+    margin-left: .5em;
+    font-size: 1.5em;
 }
