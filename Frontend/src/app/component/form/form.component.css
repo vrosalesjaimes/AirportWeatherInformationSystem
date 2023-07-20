@@ -13,8 +13,6 @@
     width: 80%;
     margin: 0 10%;
     flex-wrap: wrap;
-    margin: 0;
-    padding: 0;
     align-items: center;
     justify-content: center;
 }
@@ -85,11 +83,31 @@ mat-form-field {
 
 @media screen and (max-width: 500px) {
 
+    .panel{
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        height: auto;
+        margin-bottom: 3em;
+    }
+
+    .question{
+        margin: 0;
+        padding: 0;
+        min-height: 100vh;
+    }
+
     .item{
         flex-direction: column;
+        width: 80%;
     }
 
     .form:last-child{
         margin: 0;
+    }
+
+    .card{
+        flex-direction: column;
+        margin: 1em 0;
     }
 }
