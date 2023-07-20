@@ -2,9 +2,20 @@
     display: flex;
     align-items: center;
     flex-wrap: wrap;
+    width: 100%;
+    min-height: 80vh;
+    justify-content: center;
+    padding: 2.5vh 0;
+}
+
+.question{
+    display: flex;
     width: 80%;
     margin: 0 10%;
-    height: auto;
+    flex-wrap: wrap;
+    margin: 0;
+    padding: 0;
+    align-items: center;
     justify-content: center;
 }
 
@@ -39,11 +50,6 @@
     margin: 0 2em;
     color: #CCCCCC;
 }
-.mat-mdc-unelevated-button.mat-primary {
-    font-size: 1.2em;
-    background-color:   #1565C0;
-
-}
 
 .item p {
     font-weight: bold;
@@ -67,23 +73,20 @@ mat-form-field {
     justify-content: center;
     align-items: center;
     height: 5vh;
+    margin-top: 2em;
 }
 
 .button button{
     background-color: rgba(0, 0, 0);
+    font-size: 1.2em;
     padding: 2em;
 }
 
 
 @media screen and (max-width: 500px) {
-    .panel{
-        width: 100%;
-        margin:0;
-    }
 
     .item{
         flex-direction: column;
-        width: auto;
     }
 
     .form:last-child{
