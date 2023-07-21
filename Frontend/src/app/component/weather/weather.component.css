@@ -2,8 +2,8 @@
     display: flex;
     align-items: center;
     flex-wrap: wrap;
-    width: 80%;
-    margin: 0 10%;
+    width: 90%;
+    margin: 0 5%;
     min-height: 80vh;
     justify-content: center;
     margin-bottom: 2em;
@@ -11,6 +11,8 @@
 
 .wheater{
     height: 100%;
+    flex-basis: 47%;
+    margin-right: 3%;
     display: flex;
     flex-direction: column;
     box-sizing: border-box;
@@ -20,7 +22,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    max-width: 100%;
+    width: 50%;
 }
 
 app-map{
@@ -36,13 +38,18 @@ app-map{
 .info-wheather {
     background-color: rgba(0, 0, 0, 0.8);
     margin: 2em 0;
+    padding: 1em;
     display: flex;
     align-items: center;
-    justify-content: center;
-    flex-basis: 100%;
+    justify-content: space-evenly;
+    flex-basis: 80%;
     flex-wrap: wrap;
     color: #CCCCCC;
     border-radius: 10px;
+}
+
+.info-wheather:last-child{
+    margin-top: 0;
 }
 
 
@@ -59,4 +66,13 @@ app-map{
 
 img{
     width: 25%;
+}
+
+@media screen and (max-width: 1020px){
+    .result{
+        flex-direction: column;
+    }
+    .map{
+        width: 90%;
+    }
 }
