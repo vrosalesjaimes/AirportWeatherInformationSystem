@@ -6,7 +6,7 @@ import * as d3 from 'd3';
   templateUrl: './map.component.html',
   styleUrls: ['./map.component.css']
 })
-export class MapComponent  implements OnInit {
+export class MapComponent implements OnInit {
   private svg!: d3.Selection<SVGSVGElement, unknown, null, undefined>;
 
   constructor(private elementRef: ElementRef) { }
@@ -36,7 +36,9 @@ export class MapComponent  implements OnInit {
       .append('svg')
       .attr('width', width)
       .attr('height', height)
-      .style('background-color', '#f5f5f5');
+      .style('background-color', '#f5f5f5')
+      .attr('viewBox', `0 0 ${width} ${height}`)
+      .attr('preserveAspectRatio', 'xMidYMid meet');
 
     const centerLatitude = (airport1.latitude + airport2.latitude) / 2;
     const centerLongitude = (airport1.longitude + airport2.longitude) / 2;
