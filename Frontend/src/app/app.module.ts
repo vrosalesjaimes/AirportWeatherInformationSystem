@@ -16,7 +16,6 @@ import { BackgroundComponent } from './component/background/background.component
 import { PanelFormsComponent } from './component/panel-forms/panel-forms.component'
 import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
-import { WelcomeComponent } from './component/welcome/welcome.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +27,6 @@ import { WelcomeComponent } from './component/welcome/welcome.component';
     WeatherComponent,
     BackgroundComponent,
     PanelFormsComponent,
-    WelcomeComponent
   ],
   imports: [
     BrowserModule,
