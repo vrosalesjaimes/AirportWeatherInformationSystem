@@ -14,27 +14,23 @@ public class AirportController {
     @Autowired
     private AirportService airportService;
 
-    @GetMapping("/byCity")
-    public Set<AirportDTO> getByCity(@RequestParam("city") String city) {
-        return airportService.findByCity(city);
+    @GetMapping("/all-cities")
+    public Set<String> getAllCountryNames() {
+        return airportService.getAllCountryNames();
     }
 
-    @GetMapping("/byCountry")
-    public Set<AirportDTO> getByCountry(@RequestParam("country") String country) {
-        return airportService.findByCountry(country);
+    @GetMapping("/by-country")
+    public Set<String> getByCountry(@RequestParam("country") String country) {
+        return airportService.getCitiesByCountry(country);
     }
 
-    @GetMapping("/byAirportName")
-    public Set<AirportDTO> getByAirportName(@RequestParam("airportName") String airportName) {
-        return airportService.findByAirportName(airportName);
+    @GetMapping("/by-city")
+    public Set<String> getByAirportName(@RequestParam("city") String city) {
+        return airportService.getAirportNameByCity(city);
     }
 
     @GetMapping("/search")
-    public Set<AirportDTO> search(
-            @RequestParam("city") String city,
-            @RequestParam("country") String country,
-            @RequestParam("airportName") String airportName
-    ) {
-        return airportService.findByCityCountryAndAirportName(city, country, airportName);
+    public AirportDTO search(@RequestParam("name") String airportName) {
+        return airportService.findByAirportName(airportName);
     }
 }

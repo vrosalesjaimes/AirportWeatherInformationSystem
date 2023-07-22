@@ -17,32 +17,22 @@ public class AirportServiceImpl implements AirportService {
     private AirportRepository airportRepository;
 
     @Override
-    public Set<AirportDTO> findByCity(String city) {
-        Set<Airport> airports = airportRepository.findByCity(city);
-        return convertToDTOSet(airports);
+    public Set<String> getAllCountryNames() {
+        return airportRepository.getAllCountryNames();
     }
 
     @Override
-    public Set<AirportDTO> findByCountry(String country) {
-        Set<Airport> airports = airportRepository.findByCountry(country);
-        return convertToDTOSet(airports);
+    public Set<String> getCitiesByCountry(String country) {
+        return airportRepository.getCitiesByCountry(country);
     }
 
     @Override
-    public Set<AirportDTO> findByAirportName(String airportName) {
-        Set<Airport> airports = airportRepository.findByAirportName(airportName);
-        return convertToDTOSet(airports);
+    public Set<String> getAirportNameByCity(String city) {
+        return airportRepository.getAirportsByCity(city);
     }
 
     @Override
-    public Set<AirportDTO> findByCityCountryAndAirportName(String city, String country, String airportName) {
-        Set<Airport> airports = airportRepository.findByCityAndCountryAndAirportName(city, country, airportName);
-        return convertToDTOSet(airports);
-    }
-
-    private Set<AirportDTO> convertToDTOSet(Set<Airport> airports) {
-        return airports.stream()
-                .map(Airport::toDTO)
-                .collect(Collectors.toSet());
+    public AirportDTO findByAirportName(String airportName) {
+        return airportRepository.findByAirportName(airportName).toDTO();
     }
 }
