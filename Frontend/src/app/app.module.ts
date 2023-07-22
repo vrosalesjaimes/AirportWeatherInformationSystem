@@ -12,7 +12,8 @@ import { HeaderComponent } from './component/header/header.component';
 import { FooterComponent } from './component/footer/footer.component';
 import { MapComponent } from './component/map/map.component';
 import { WeatherComponent } from './component/weather/weather.component';
-import { BackgroundComponent } from './component/background/background.component'
+import { BackgroundComponent } from './component/background/background.component';
+import { PanelFormsComponent } from './component/panel-forms/panel-forms.component'
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { BackgroundComponent } from './component/background/background.component
     FooterComponent,
     MapComponent,
     WeatherComponent,
-    BackgroundComponent
+    BackgroundComponent,
+    PanelFormsComponent
   ],
   imports: [
     BrowserModule,
