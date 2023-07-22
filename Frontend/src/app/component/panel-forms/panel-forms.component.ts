@@ -1,6 +1,7 @@
 import { Component, ViewChild } from '@angular/core';
 import { Airport } from 'src/app/objects/airport';
 import { FormComponent } from '../form/form.component';
+import { DataSharingService } from 'src/app/service/data-sharing.service';
 
 @Component({
   selector: 'app-panel-forms',
@@ -14,22 +15,28 @@ export class PanelFormsComponent {
   @ViewChild('origin') origin!: FormComponent;
   @ViewChild('destination') destination!: FormComponent;
 
-  resultForm1!: Airport;
-  resultForm2!: Airport;
+  originForm!: Airport;
+  destinationForm!: Airport;
+
+  constructor(private dataSharingService: DataSharingService){}
 
   handleResultForm1(result: Airport) {
-    this.resultForm1 = result;
-    console.log(this.resultForm1)
+    this.originForm = result;
+    console.log(this.originForm)
   }
 
   handleResultForm2(result: Airport) {
-    this.resultForm2 = result;
-    console.log(this.resultForm2)
+    this.destinationForm = result;
+    console.log(this.destinationForm)
   }
 
   areAllFieldsSelected() {
     const originForm = this.origin?.checkStatus();
     const destinationForm = this.destination?.checkStatus();
     return originForm && destinationForm;
+  }
+
+  sendData(){
+    this.dataSharingService.setSharedData([this.originForm,this.destinationForm]);
   }
 }
