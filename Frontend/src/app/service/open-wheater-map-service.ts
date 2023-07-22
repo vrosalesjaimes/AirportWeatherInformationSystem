@@ -6,7 +6,7 @@ import { environment } from 'src/environments/environment.development';
 @Injectable({
   providedIn: 'root'
 })
-export class OpenWheaterMapServiceService {
+export class OpenWheaterMapService {
   private apiKey: string = environment.openWeatherMapApiKey;
   private baseUrl: string = environment.apiUrl;
 
