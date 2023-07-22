@@ -1,7 +1,9 @@
 <div class="panel">
     <div class="question">
-        <app-form title="Origin Airport"></app-form>
-        <app-form title="Destination Airport"></app-form>
+        <app-form [title]="originTitle"
+        (resultEmitter)="handleResultForm1($event)"></app-form>
+        <app-form [title]="destinationTitle"
+        (resultEmitter)="handleResultForm2($event)"></app-form>
     </div>
     <div class="button">
       <button mat-flat-button color="primary">Get weather</button>

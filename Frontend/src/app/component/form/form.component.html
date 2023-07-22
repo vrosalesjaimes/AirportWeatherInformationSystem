@@ -7,10 +7,9 @@
       <p> Country </p>
       <mat-form-field>
         <mat-label>Select a country.</mat-label>
-        <mat-select>
-          <mat-option value="1">Option 1</mat-option>
-          <mat-option value="2">Option 2</mat-option>
-          <mat-option value="3">Option 3</mat-option>
+        <mat-select (selectionChange)="getCitiesByCountry($event.value)">
+          <mat-option *ngFor="let country of countries" 
+          [value]="country" required>{{country}}</mat-option>
         </mat-select>
       </mat-form-field>
     </div>
@@ -18,10 +17,9 @@
       <p> City: </p>
       <mat-form-field>
         <mat-label>Select a city</mat-label>
-        <mat-select>
-          <mat-option value="1">Option 1</mat-option>
-          <mat-option value="2">Option 2</mat-option>
-          <mat-option value="3">Option 3</mat-option>
+        <mat-select (selectionChange)="getAirportsByCity($event.value)" >
+          <mat-option *ngFor="let city of cities"
+          [value]="city" required>{{city}}</mat-option>
         </mat-select>
       </mat-form-field>
     </div>
@@ -29,10 +27,9 @@
       <p> Airport </p>
       <mat-form-field>
         <mat-label>Select an Airport</mat-label>
-        <mat-select>
-          <mat-option value="1">Option 1</mat-option>
-          <mat-option value="2">Option 2</mat-option>
-          <mat-option value="3">Option 3</mat-option>
+        <mat-select (selectionChange)="getInfoAirport($event.value)">
+          <mat-option *ngFor="let airport of airports"
+          [value]="airport" >{{airport}}</mat-option>
         </mat-select>
       </mat-form-field>
     </div>

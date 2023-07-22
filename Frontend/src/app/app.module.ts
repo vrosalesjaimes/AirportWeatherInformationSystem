@@ -14,6 +14,7 @@ import { MapComponent } from './component/map/map.component';
 import { WeatherComponent } from './component/weather/weather.component';
 import { BackgroundComponent } from './component/background/background.component';
 import { PanelFormsComponent } from './component/panel-forms/panel-forms.component'
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { PanelFormsComponent } from './component/panel-forms/panel-forms.compone
     BrowserAnimationsModule,
     MatSelectModule,
     MatButtonModule,
-    MatIconModule
+    MatIconModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
