@@ -1,11 +1,13 @@
 <div class="panel">
     <div class="question">
         <app-form [title]="originTitle"
-        (resultEmitter)="handleResultForm1($event)"></app-form>
+        (resultEmitter)="handleResultForm1($event)" #origin></app-form>
         <app-form [title]="destinationTitle"
-        (resultEmitter)="handleResultForm2($event)"></app-form>
+        (resultEmitter)="handleResultForm2($event)" #destination></app-form>
     </div>
     <div class="button">
-      <button mat-flat-button color="primary">Get weather</button>
+      <button mat-flat-button 
+      color="primary"
+      [disabled]="!areAllFieldsSelected()">Get weather</button>
     </div>
   </div>

@@ -9,7 +9,8 @@
         <mat-label>Select a country.</mat-label>
         <mat-select (selectionChange)="getCitiesByCountry($event.value)">
           <mat-option *ngFor="let country of countries" 
-          [value]="country" required>{{country}}</mat-option>
+          [value]="country" required
+          #countrySelect>{{country}}</mat-option>
         </mat-select>
       </mat-form-field>
     </div>
@@ -27,7 +28,8 @@
       <p> Airport </p>
       <mat-form-field>
         <mat-label>Select an Airport</mat-label>
-        <mat-select (selectionChange)="getInfoAirport($event.value)">
+        <mat-select (selectionChange)="getInfoAirport($event.value); 
+        isAirportSelected=true">
           <mat-option *ngFor="let airport of airports"
           [value]="airport" >{{airport}}</mat-option>
         </mat-select>

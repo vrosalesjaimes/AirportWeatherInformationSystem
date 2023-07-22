@@ -15,6 +15,8 @@ export class FormComponent {
   cities: string[] = [];
   airports: string[] = [];
 
+  isAirportSelected = false;
+
   constructor(private http: HttpClient) { }
 
   ngOnInit(): void {
@@ -32,6 +34,7 @@ export class FormComponent {
     this.http.get<string[]>('http://localhost:8080/airports/by-country', { params: { country: country } })
       .subscribe(data => {
         this.cities = data;
+        this.airports = [];
       });
   }
 
@@ -53,4 +56,12 @@ export class FormComponent {
         }
       });
   }
+
+  checkStatus(){
+    if(this.isAirportSelected){
+      return true;
+    }
+    return false;
+  }
+  
 }
