@@ -15,6 +15,8 @@ import { WeatherComponent } from './component/weather/weather.component';
 import { BackgroundComponent } from './component/background/background.component';
 import { PanelFormsComponent } from './component/panel-forms/panel-forms.component'
 import { HttpClientModule } from '@angular/common/http';
+import { AppRoutingModule } from './app-routing.module';
+import { WelcomeComponent } from './component/welcome/welcome.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +27,8 @@ import { HttpClientModule } from '@angular/common/http';
     MapComponent,
     WeatherComponent,
     BackgroundComponent,
-    PanelFormsComponent
+    PanelFormsComponent,
+    WelcomeComponent
   ],
   imports: [
     BrowserModule,
@@ -33,7 +36,8 @@ import { HttpClientModule } from '@angular/common/http';
     MatSelectModule,
     MatButtonModule,
     MatIconModule,
-    HttpClientModule
+    HttpClientModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
