@@ -41,5 +41,6 @@ export class PanelFormsComponent {
   sendData(){
     this.dataSharingService.setSharedData([this.originForm,this.destinationForm]);
     this.router.navigate(['/weather'])
+    console.log('Si se termina de jecutar');
   }
 }

@@ -35,7 +35,7 @@ export class WeatherComponent implements OnInit {
     });
     this.weatherService.getWeatherByCoordinates(destinationAirport.latitude, destinationAirport.longitude).subscribe({
       next: data => {
-        this.originWeather = data;
+        this.destinationWeather = data;
       }
     });
   }
