@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Airport } from 'src/app/objects/airport';
 import { DataSharingService } from 'src/app/service/data-sharing.service';
 import { OpenWheaterMapService } from 'src/app/service/open-wheater-map-service';
+import { WeatherData } from 'src/app/interface/weather-data';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-weather',
@@ -10,8 +12,8 @@ import { OpenWheaterMapService } from 'src/app/service/open-wheater-map-service'
 })
 export class WeatherComponent implements OnInit {
 
-  protected originWeather!: any;
-  protected destinationWeather!: any;
+  protected originWeather!: WeatherData;
+  protected destinationWeather!: WeatherData;
   protected originAirport!: Airport;
   protected destinationAirport!: Airport;
 
@@ -26,9 +28,15 @@ export class WeatherComponent implements OnInit {
   }
 
   getWeather(originAirport: Airport, destinationAirport: Airport){
-    this.originWeather = this.weatherService.getWeatherByCoordinates(originAirport.latitude, originAirport.longitude);
-    console.log(this.originWeather);
-    this.destinationWeather = this.weatherService.getWeatherByCoordinates(destinationAirport.latitude, destinationAirport.longitude);
-    console.log(this.destinationWeather);
+    this.weatherService.getWeatherByCoordinates(originAirport.latitude, originAirport.longitude).subscribe({
+      next: data => {
+        this.originWeather = data;
+      }
+    });
+    this.weatherService.getWeatherByCoordinates(destinationAirport.latitude, destinationAirport.longitude).subscribe({
+      next: data => {
+        this.originWeather = data;
+      }
+    });
   }
 }

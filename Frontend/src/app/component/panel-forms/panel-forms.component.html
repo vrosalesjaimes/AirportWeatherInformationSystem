@@ -8,6 +8,7 @@
     <div class="button">
       <button mat-flat-button 
       color="primary"
-      [disabled]="!areAllFieldsSelected()">Get weather</button>
+      [disabled]="!areAllFieldsSelected()"
+      (click)="sendData()">Get weather</button>
     </div>
   </div>

@@ -2,6 +2,7 @@ import { Component, ViewChild } from '@angular/core';
 import { Airport } from 'src/app/objects/airport';
 import { FormComponent } from '../form/form.component';
 import { DataSharingService } from 'src/app/service/data-sharing.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-panel-forms',
@@ -18,7 +19,8 @@ export class PanelFormsComponent {
   originForm!: Airport;
   destinationForm!: Airport;
 
-  constructor(private dataSharingService: DataSharingService){}
+  constructor(private dataSharingService: DataSharingService,
+              private router: Router){}
 
   handleResultForm1(result: Airport) {
     this.originForm = result;
@@ -38,5 +40,6 @@ export class PanelFormsComponent {
 
   sendData(){
     this.dataSharingService.setSharedData([this.originForm,this.destinationForm]);
+    this.router.navigate(['/weather'])
   }
 }

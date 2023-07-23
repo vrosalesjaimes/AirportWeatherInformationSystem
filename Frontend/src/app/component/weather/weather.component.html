@@ -3,18 +3,26 @@
         <div class="info-wheather">
             <img src="./../../../assets/icons/airport.png" alt="">
             <div class="info">
-                <h2>Ciudad, Nombre del Aeropuerto</h2>
-                <p>Temperatura</p>
-                <p>Sensacion termica</p>
+                <h2>
+                    {{originAirport.country}}, 
+                    {{originAirport.city}} <br>
+                    {{originAirport.airportName}}
+                </h2>
+                <p>{{originWeather.current.temp}} </p>
+                <p>{{originWeather.current.feels_like}} </p>
                 <p>Prob lluvia</p>
             </div>
         </div>
         <div class="info-wheather">
             <img src="./../../../assets/icons/airport.png" alt="">
             <div class="info">
-                <h2>Ciudad, Nombre del Aeropuerto</h2>
-                <p>Temperatura</p>
-                <p>Sensacion termica</p>
+                <h2>
+                    {{destinationAirport.country}}, 
+                    {{destinationAirport.city}} <br>
+                    {{destinationAirport.airportName}}
+                </h2>
+                <p>{{destinationWeather.current.temp}} </p>
+                <p>{{destinationWeather.current.feels_like}} </p>
                 <p>Prob lluvia</p>
             </div>
         </div>
