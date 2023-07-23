@@ -11,3 +11,53 @@ body {
     background-size: cover;
     background-position: center;
 }
+
+.protector{
+    position:absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    z-index: 9999900;
+    height: 100%;
+    width: 100%;
+    background-color: black;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    animation: fadeOutAnimation 2s ease-in 1.5s forwards;
+}
+
+.info_page{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 90%;
+}
+
+.info_page h1{
+    color: #ffffff;
+    font-size: 3em;
+    padding: 10%;
+    text-align: center;
+    line-height: normal;
+}
+
+.my_logo{
+    width: 15%;
+    margin-left: auto;
+}
+
+.content{
+    display: none;
+}
+
+@keyframes fadeOutAnimation {
+    90% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
