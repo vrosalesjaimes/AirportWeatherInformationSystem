@@ -1,4 +1,4 @@
-<div class="result">
+<div class="result" *ngIf="originWeather && destinationWeather">
     <div class="wheater">
         <div class="info-wheather">
             <img src="./../../../assets/icons/airport.png" alt="">
@@ -8,9 +8,8 @@
                     {{originAirport.city}} <br>
                     {{originAirport.airportName}}
                 </h2>
-                <p>{{originWeather.current.temp}} </p>
-                <p>{{originWeather.current.feels_like}} </p>
-                <p>Prob lluvia</p>
+                <p>Temperature: {{originWeather.current.temp}}°F </p>
+                <p>Feels like: {{originWeather.current.feels_like}}°F </p>
             </div>
         </div>
         <div class="info-wheather">
@@ -21,9 +20,8 @@
                     {{destinationAirport.city}} <br>
                     {{destinationAirport.airportName}}
                 </h2>
-                <p>{{destinationWeather.current.temp}} </p>
-                <p>{{destinationWeather.current.feels_like}} </p>
-                <p>Prob lluvia</p>
+                <p>Temperature: {{destinationWeather.current.temp}}°F </p>
+                <p>Feels like: {{destinationWeather.current.feels_like}}°F </p>
             </div>
         </div>
     </div>

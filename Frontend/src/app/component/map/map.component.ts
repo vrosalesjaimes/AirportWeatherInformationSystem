@@ -1,5 +1,8 @@
 import { Component, ElementRef, OnInit } from '@angular/core';
 import * as d3 from 'd3';
+import { WeatherData } from 'src/app/interface/weather-data';
+import { Airport } from 'src/app/objects/airport';
+import { DataSharingService } from 'src/app/service/data-sharing.service';
 
 @Component({
   selector: 'app-map',
@@ -8,8 +11,11 @@ import * as d3 from 'd3';
 })
 export class MapComponent implements OnInit {
   private svg!: d3.Selection<SVGSVGElement, unknown, null, undefined>;
+  private weatherData: Airport[];
 
-  constructor(private elementRef: ElementRef) { }
+  constructor(private elementRef: ElementRef, private sharedService: DataSharingService) {
+    this.weatherData = this.sharedService.getSharedData();
+   }
 
   ngOnInit(): void {
     this.generateMap();
@@ -19,18 +25,13 @@ export class MapComponent implements OnInit {
     const width = 600;
     const height = 400;
 
-    // Datos de los aeropuertos
-    const airport1 = {
-      name: 'Aeropuerto 1',
-      latitude: 51.505,
-      longitude: -0.09
-    };
+    const originAirport = this.weatherData[0];
+    const destinationAirport = this.weatherData[1];
 
-    const airport2 = {
-      name: 'Aeropuerto 2',
-      latitude: 40.7128,
-      longitude: -74.0060
-    };
+    const originLat =  Number(originAirport.latitude);
+    const originLon =  Number(originAirport.longitude);
+    const destinationLat =  Number(destinationAirport.latitude);
+    const destinationLon =  Number(destinationAirport.longitude);
 
     this.svg = d3.select(this.elementRef.nativeElement.querySelector('#mapContainer'))
       .append('svg')
@@ -40,20 +41,20 @@ export class MapComponent implements OnInit {
       .attr('viewBox', `0 0 ${width} ${height}`)
       .attr('preserveAspectRatio', 'xMidYMid meet');
 
-    const centerLatitude = (airport1.latitude + airport2.latitude) / 2;
-    const centerLongitude = (airport1.longitude + airport2.longitude) / 2;
+    const centerLatitude = (originLat + destinationLon) / 2;
+    const centerLongitude = (originLon + destinationLon) / 2;
 
     const projection = d3.geoMercator()
       .center([centerLongitude, centerLatitude]) // Ajusta el centro de la proyección
-      .scale(200) // Ajusta la escala de la proyección
+      .scale(100) // Ajusta la escala de la proyección
       .translate([width / 2, height / 2]);
 
     const path = d3.geoPath().projection(projection);
 
     // Coordenadas límites
     const bounds = [
-      [airport1.latitude, airport1.longitude],
-      [airport2.latitude, airport2.longitude]
+      [originLat, originLon],
+      [destinationLat, destinationLon]
     ];
 
     // Carga el archivo GeoJSON del mapa del mundo
@@ -91,21 +92,21 @@ export class MapComponent implements OnInit {
 
       // Marcar los puntos de los aeropuertos
       this.svg.append('circle')
-        .attr('cx', projection([airport1.longitude, airport1.latitude])?.[0] || 0)
-        .attr('cy', projection([airport1.longitude, airport1.latitude])?.[1] || 0)
+        .attr('cx', projection([originLon, originLat])?.[0] || 0)
+        .attr('cy', projection([originLon, originLat])?.[1] || 0)
         .attr('r', 5)
         .attr('fill', 'red');
 
       this.svg.append('circle')
-        .attr('cx', projection([airport2.longitude, airport2.latitude])?.[0] || 0)
-        .attr('cy', projection([airport2.longitude, airport2.latitude])?.[1] || 0)
+        .attr('cx', projection([destinationLon, destinationLat])?.[0] || 0)
+        .attr('cy', projection([destinationLon, destinationLat])?.[1] || 0)
         .attr('r', 5)
         .attr('fill', 'blue');
 
       // Unir los puntos de los aeropuertos con una línea punteada
       const line = d3.line()([
-        projection([airport1.longitude, airport1.latitude]) || [0, 0],
-        projection([airport2.longitude, airport2.latitude]) || [0, 0]
+        projection([originLon, originLat]) || [0, 0],
+        projection([destinationLon, destinationLat]) || [0, 0]
       ]);
 
       const lineN = this.svg.append('path')
