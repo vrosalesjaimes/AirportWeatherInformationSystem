@@ -24,12 +24,10 @@ export class PanelFormsComponent {
 
   handleResultForm1(result: Airport) {
     this.originForm = result;
-    console.log(this.originForm)
   }
 
   handleResultForm2(result: Airport) {
     this.destinationForm = result;
-    console.log(this.destinationForm)
   }
 
   areAllFieldsSelected() {
@@ -41,6 +39,5 @@ export class PanelFormsComponent {
   sendData(){
     this.dataSharingService.setSharedData([this.originForm,this.destinationForm]);
     this.router.navigate(['/weather'])
-    console.log('Si se termina de jecutar');
   }
 }
