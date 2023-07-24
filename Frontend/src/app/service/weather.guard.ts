@@ -5,11 +5,11 @@ export var weatherGuard: CanActivateFn = (route, state) => {
   const router = inject(Router);
   
   let currentUrl = router.url;
-  let isFromPanel = currentUrl.indexOf('/panel') == -1 ? false : true;
+  let isFromPanel = currentUrl.indexOf('') == -1 ? false : true;
 
   if(isFromPanel){
     return true;
   } else{
-    return router.parseUrl('/panel');
+    return router.parseUrl('');
   }
 };

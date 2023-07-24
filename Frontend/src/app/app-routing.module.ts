@@ -6,7 +6,7 @@ import { WeatherComponent } from './component/weather/weather.component';
 import { weatherGuard } from './service/weather.guard';
 
 const routes: Routes = [
-  {path: 'panel', component:PanelFormsComponent, pathMatch: 'full'},
+  {path: '', component:PanelFormsComponent, pathMatch: 'full'},
   {path: 'weather', component:WeatherComponent, pathMatch:'full', canActivate: [weatherGuard]}
 ]
 
