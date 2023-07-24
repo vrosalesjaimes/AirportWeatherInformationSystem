@@ -68,6 +68,40 @@ img{
     width: 25%;
 }
 
+.floating-button {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 60px;
+    height: 60px;
+    z-index: 9999999;
+    border-radius: 50%;
+    background-color: #000;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.mdc-button__label, 
+.mat-mdc-focus-indicator
+.mat-mdc-button-touch-target {
+    margin: 0;
+    padding: 0;
+    background-color: transparent;
+}
+
+mat-icon{
+    color: #fff;
+    font-size: 2em;
+    margin: 0;
+    padding: 0;
+    background-color: transparent;
+}
+  
+
 @media screen and (max-width: 1020px){
     .result{
         flex-direction: column;

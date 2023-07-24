@@ -4,7 +4,7 @@
             <img src="./../../../assets/icons/airport.png" alt="">
             <div class="info">
                 <h2>
-                    {{originAirport.country}}, 
+                    {{originAirport.country}},
                     {{originAirport.city}} <br>
                     {{originAirport.airportName}}
                 </h2>
@@ -16,7 +16,7 @@
             <img src="./../../../assets/icons/airport.png" alt="">
             <div class="info">
                 <h2>
-                    {{destinationAirport.country}}, 
+                    {{destinationAirport.country}},
                     {{destinationAirport.city}} <br>
                     {{destinationAirport.airportName}}
                 </h2>
@@ -27,5 +27,8 @@
     </div>
     <div class="map">
         <app-map></app-map>
+    </div>
+    <div class="floating-button" (click)="getPanel()">
+        <img src="../../../assets/icons/home.png" alt="">.
     </div>
 </div>

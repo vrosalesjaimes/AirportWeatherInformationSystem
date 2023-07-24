@@ -4,6 +4,7 @@ import { DataSharingService } from 'src/app/service/data-sharing.service';
 import { OpenWheaterMapService } from 'src/app/service/open-wheater-map-service';
 import { WeatherData } from 'src/app/interface/weather-data';
 import { Observable } from 'rxjs';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-weather',
@@ -18,7 +19,8 @@ export class WeatherComponent implements OnInit {
   protected destinationAirport!: Airport;
 
   constructor(private dataSharingService: DataSharingService,
-              private weatherService: OpenWheaterMapService){};
+              private weatherService: OpenWheaterMapService,
+              private router:Router ){};
 
   ngOnInit(): void {
     const receivedData: Airport[] = this.dataSharingService.getSharedData();
@@ -38,5 +40,9 @@ export class WeatherComponent implements OnInit {
         this.destinationWeather = data;
       }
     });
+  }
+
+  getPanel(){
+    this.router.navigate(['']);
   }
 }

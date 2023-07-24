@@ -12,6 +12,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const appRootElement = document.querySelector('app-root');
     if (appRootElement) {
       appRootElement.classList.remove('content');
+      const protector = document.getElementsByClassName('protector').item(0) as HTMLElement;
+      protector.style.display = 'none';
     }
-  }, 1500);
+  }, 2000);
 });
+
