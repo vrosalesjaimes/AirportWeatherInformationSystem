@@ -17,10 +17,12 @@ export class WeatherComponent implements OnInit {
   protected destinationWeather!: WeatherData;
   protected originAirport!: Airport;
   protected destinationAirport!: Airport;
+  protected originIcon!: string;
+  protected destinationIcon!: string; 
 
   constructor(private dataSharingService: DataSharingService,
               private weatherService: OpenWheaterMapService,
-              private router:Router ){};
+              private router: Router) {}
 
   ngOnInit(): void {
     const receivedData: Airport[] = this.dataSharingService.getSharedData();
@@ -29,20 +31,23 @@ export class WeatherComponent implements OnInit {
     this.getWeather(this.originAirport, this.destinationAirport);
   }
 
-  getWeather(originAirport: Airport, destinationAirport: Airport){
+  getWeather(originAirport: Airport, destinationAirport: Airport) {
     this.weatherService.getWeatherByCoordinates(originAirport.latitude, originAirport.longitude).subscribe({
       next: data => {
         this.originWeather = data;
+        this.originIcon = this.originWeather.current.weather[0].main.toLowerCase();
       }
     });
+
     this.weatherService.getWeatherByCoordinates(destinationAirport.latitude, destinationAirport.longitude).subscribe({
       next: data => {
         this.destinationWeather = data;
+        this.destinationIcon = this.destinationWeather.current.weather[0].main.toLowerCase();
       }
     });
   }
 
-  getPanel(){
+  getPanel() {
     this.router.navigate(['']);
   }
 }

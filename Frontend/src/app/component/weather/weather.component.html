@@ -1,7 +1,7 @@
 <div class="result" *ngIf="originWeather && destinationWeather">
     <div class="wheater">
         <div class="info-wheather">
-            <img src="./../../../assets/icons/airport.png" alt="">
+            <img src="./../../../assets/weather_icons/{{originIcon}}.png" alt="">
             <div class="info">
                 <h2>
                     {{originAirport.country}},
@@ -10,10 +10,11 @@
                 </h2>
                 <p>Temperature: {{originWeather.current.temp}}°F </p>
                 <p>Feels like: {{originWeather.current.feels_like}}°F </p>
+                <p>Description: {{originWeather.current.weather[0].description}}</p>
             </div>
         </div>
         <div class="info-wheather">
-            <img src="./../../../assets/icons/airport.png" alt="">
+            <img src="./../../../assets/weather_icons/{{destinationIcon}}.png" alt="">
             <div class="info">
                 <h2>
                     {{destinationAirport.country}},
@@ -22,6 +23,7 @@
                 </h2>
                 <p>Temperature: {{destinationWeather.current.temp}}°F </p>
                 <p>Feels like: {{destinationWeather.current.feels_like}}°F </p>
+                <p>Description: {{destinationWeather.current.weather[0].description}}</p>
             </div>
         </div>
     </div>
